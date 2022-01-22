@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelController : MonoBehaviour
 {
@@ -10,13 +11,16 @@ public class LevelController : MonoBehaviour
     public Transform SpawnSpace;
     private Vector2 spawnOffset;
     public Animator ClickAnimator;
-    public float SpawnDelay;
-    private bool needsToSpawn = true;
+    public int PlayersClicks;
+    public int PlayersStartingClicks;
+    public bool needsToSpawn = true;
+    public TMP_Text PlayerClicksUI;
 
     public static LevelController s;
     // Start is called before the first frame update
     void Start()
     {
+        PlayersClicks = PlayersStartingClicks;
         spawnOffset.x = SpawnSpace.localScale.x * .5f;
         spawnOffset.y = SpawnSpace.localScale.y * .5f;
         s = this;
@@ -33,14 +37,17 @@ public class LevelController : MonoBehaviour
 
             DemonsInPlay += 1;
         }
-        if (DemonsInPlay >= TargetNumberOfDemons)
+        if (needsToSpawn == true && DemonsInPlay >= TargetNumberOfDemons)
         {
+            PlayersClicks = PlayersStartingClicks;
+            PlayerClicksUI.text = PlayersClicks.ToString();
             needsToSpawn = false;
         }
-        else if (DemonsInPlay < TargetNumberOfDemons - 10)
+        else if (needsToSpawn == false && PlayersClicks < 1)
         {
             needsToSpawn = true;
         }
+
             
     }
     public void DemonDestroyed()
