@@ -57,39 +57,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795697, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Color.b
-      value: 0.057589464
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795697, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Color.g
-      value: 0.745283
+      value: 0.36845142
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795697, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.74509805
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795699, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0.05882353
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795699, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0.7490196
+      value: 0.36862746
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795699, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.r
-      value: 0
+      value: 0.74509805
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795699, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Parameters.colorGradient.key1.b
-      value: 0.05882353
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795699, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Parameters.colorGradient.key1.g
-      value: 0.7490196
+      value: 0.36862746
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795699, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Parameters.colorGradient.key1.r
-      value: 0
+      value: 0.74509805
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795700, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Name
