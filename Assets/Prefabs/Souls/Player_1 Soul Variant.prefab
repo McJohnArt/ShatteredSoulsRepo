@@ -33,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3290725654024447812, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_ColliderMask.m_Bits
-      value: 4293918280
+      value: 4293917768
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795696, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_RootOrder

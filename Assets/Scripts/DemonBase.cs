@@ -25,7 +25,7 @@ public class DemonBase : MonoBehaviour
     }
     public void ChainDestroy()
     {
-        Collider2D[] adjacentDemons = Physics2D.OverlapCircleAll(transform.position, 1.2f);
+        Collider2D[] adjacentDemons = Physics2D.OverlapCircleAll(transform.position, 1.5f);
         //Collider[] adjacentDemons = Physics.OverlapSphere(transform.position, 10f);
         for (int i = 0; i < adjacentDemons.Length; i++)
         {

@@ -688,7 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60a9377c404f4e4b974b99e2e06dad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfPlayers: 3
+  NumberOfPlayers: 4
   SoulSpawnLocations:
   - {fileID: 782047011}
   - {fileID: 100776962}
@@ -718,6 +718,7 @@ MonoBehaviour:
   - {fileID: 3197678820918114653, guid: 676bfe18b9802d749ace77d1bbdb299f, type: 3}
   - {fileID: 7119325577115558404, guid: da24c37be75657b4a96c3c4fb3974499, type: 3}
   - {fileID: 3627837258389942194, guid: 40a6d7caeb9536640b5112145b171cf7, type: 3}
+  - {fileID: 8086345691645687720, guid: 59e78a0a7e521b34c838f9f97aed1ee0, type: 3}
   WhichSoulToSpawn: 0
 --- !u!1 &298146974
 GameObject:
@@ -1372,13 +1373,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DemonsInPlay: 0
-  TargetNumberOfDemons: 123
+  TargetNumberOfDemons: 50
   Demons:
   - {fileID: 1798012361739485493, guid: 66378e9e7b1bcdd459956c2f8690e804, type: 3}
   - {fileID: 1416938454675991825, guid: c86fb5761c46d8043896900d5f62b734, type: 3}
   - {fileID: 6199036020702561700, guid: 6222f5db3b3b3dc40888f86e390c86c5, type: 3}
-  - {fileID: 7846508311286524754, guid: 824edb8c1039ca14691c977b3434c1f4, type: 3}
-  - {fileID: 1414415269068822314, guid: c4424b6abaeeca743b3cadd805af7356, type: 3}
   SpawnSpace: {fileID: 90168718}
   ClickAnimator: {fileID: 574421533}
   PlayersClicks: 0
@@ -1996,7 +1995,7 @@ GameObject:
   - component: {fileID: 924918789}
   - component: {fileID: 924918788}
   - component: {fileID: 924918790}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: L_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2211,7 +2210,7 @@ GameObject:
   - component: {fileID: 960878923}
   - component: {fileID: 960878922}
   - component: {fileID: 960878924}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bottom_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2343,7 +2342,7 @@ GameObject:
   - component: {fileID: 1016552508}
   - component: {fileID: 1016552507}
   - component: {fileID: 1016552509}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: R_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2724,7 +2723,7 @@ GameObject:
   - component: {fileID: 1269893707}
   - component: {fileID: 1269893706}
   - component: {fileID: 1269893705}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Top_Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3450,7 +3449,7 @@ GameObject:
   - component: {fileID: 1613925424}
   - component: {fileID: 1613925423}
   - component: {fileID: 1613925425}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Top_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
