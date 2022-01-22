@@ -7,9 +7,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 320625116365942000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 320625116365942000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 320625116365942000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.36862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 320625116365942000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 320625116365942000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 320625116365942000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.36862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 320625116365942000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 0.74509805
+      objectReference: {fileID: 0}
     - target: {fileID: 3290725654024447812, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_ColliderMask.m_Bits
-      value: 4294967048
+      value: 4293918472
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795696, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_RootOrder
@@ -98,6 +126,18 @@ PrefabInstance:
     - target: {fileID: 5287196733760795700, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513137485584756593, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513137485584756593, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: m_Color.g
+      value: 0.36862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513137485584756593, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: m_Color.r
+      value: 0.74509805
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}

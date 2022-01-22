@@ -35,7 +35,7 @@ public class DemonBase : MonoBehaviour
                 adjacentDemons[i].GetComponent<DemonBase>().IsBeingDestroyed = true;
                 adjacentDemons[i].GetComponent<DemonBase>().ChainDestroy();
                 LevelController.s.DemonsInPlay -= 1;
-                LevelController.s.ClickAnimator.Play("ClickAnimation");
+                //LevelController.s.ClickAnimator.Play("ClickAnimation");
             }
         }
         Instantiate(Explosion, transform.position, transform.rotation);

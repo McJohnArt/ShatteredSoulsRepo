@@ -13,7 +13,7 @@ public class LevelController : MonoBehaviour
     public Animator ClickAnimator;
     public int PlayersClicks;
     public int PlayersStartingClicks;
-    public bool needsToSpawn = true;
+    //public bool needsToSpawn = true;
     public TMP_Text PlayerClicksUI;
 
     public static LevelController s;
@@ -29,7 +29,7 @@ public class LevelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DemonsInPlay < TargetNumberOfDemons && needsToSpawn == true)
+        if (DemonsInPlay < TargetNumberOfDemons)
         {
             Instantiate(Demons[Random.Range(0, Demons.Count)], SpawnSpace.position +
                 new Vector3(Random.Range(spawnOffset.x * -1, spawnOffset.x),
@@ -37,16 +37,16 @@ public class LevelController : MonoBehaviour
 
             DemonsInPlay += 1;
         }
-        if (needsToSpawn == true && DemonsInPlay >= TargetNumberOfDemons)
+        if (PlayersClicks < 1)
         {
             PlayersClicks = PlayersStartingClicks;
             PlayerClicksUI.text = PlayersClicks.ToString();
-            needsToSpawn = false;
+            //needsToSpawn = false;
         }
-        else if (needsToSpawn == false && PlayersClicks < 1)
-        {
-            needsToSpawn = true;
-        }
+        //else if (needsToSpawn == false && PlayersClicks < 1)
+        //{
+        //    needsToSpawn = true;
+        //}
 
             
     }

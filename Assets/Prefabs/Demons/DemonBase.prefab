@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 3407387813176769361}
   - component: {fileID: 2384659855739502295}
   - component: {fileID: 1080047149955957723}
-  m_Layer: 0
+  - component: {fileID: 2905687964731808721}
+  m_Layer: 20
   m_Name: DemonBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,10 +115,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.3
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_Mass: 1
+  m_LinearDrag: 1
+  m_AngularDrag: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -137,3 +138,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsBeingDestroyed: 0
   Explosion: {fileID: 2950041137960406422, guid: 2f03b335a89cf594fa13a364301bddca, type: 3}
+--- !u!95 &2905687964731808721
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6493903603135112414}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 669f79614d4b8184592aa3cc3a343625, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
