@@ -17,12 +17,15 @@ public class DemonBase : MonoBehaviour
     {
         
     }
-    private void OnMouseUp()
+    private void OnMouseDown()
     {
-        LevelController.s.PlayersClicks -= 1;
-        LevelController.s.PlayerCards[LevelController.s.CurrentPlayersTurn].ClicksLeft.text
-            = LevelController.s.PlayersClicks.ToString();
-        ChainDestroy();
+        if(LevelController.s.PlayerCanClick == true)
+        {
+            LevelController.s.PlayersClicks -= 1;
+            LevelController.s.PlayerCards[LevelController.s.CurrentPlayersTurn].ClicksLeft.text
+                = LevelController.s.PlayersClicks.ToString();
+            ChainDestroy();
+        }
     }
     public void ChainDestroy()
     {

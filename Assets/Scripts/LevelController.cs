@@ -19,9 +19,14 @@ public class LevelController : MonoBehaviour
     public GameObject WinningScreen;
     public TMP_Text WinningText;
     public List<PlayerCardInfo> PlayerCards;
+
+    public GameObject NextTurnScreen;
+    public TMP_Text NextTurnText;
     public int CurrentPlayersTurn;
 
     private float scoreUpdateDelay;
+    private bool gameOver;
+    public bool PlayerCanClick;
     public List<PlayerSoulsAndID> PlayersSouls;
     public List<int> PlayersScores;
     public List<int> PlayersSoulGroups;
@@ -36,6 +41,7 @@ public class LevelController : MonoBehaviour
     }
     void Start()
     {
+        PlayerCanClick = true;
         PlayersClicks = PlayersStartingClicks;
         spawnOffset.x = SpawnSpace.localScale.x * .5f;
         spawnOffset.y = SpawnSpace.localScale.y * .5f;
@@ -80,9 +86,14 @@ public class LevelController : MonoBehaviour
             {
                 CurrentPlayersTurn += 1;
             }
-            PlayerCards[CurrentPlayersTurn].CardAnimator.Play("PlayersTurnStart");
-            PlayersClicks = PlayersStartingClicks;
-            PlayerCards[CurrentPlayersTurn].ClicksLeft.text = PlayersClicks.ToString();
+            if (gameOver == false)
+            {
+                StartCoroutine(TurnOver(CurrentPlayersTurn));
+
+                
+                PlayersClicks = PlayersStartingClicks;
+                PlayerCards[CurrentPlayersTurn].ClicksLeft.text = PlayersClicks.ToString();
+            }
             //needsToSpawn = false;
         }
         //else if (needsToSpawn == false && PlayersClicks < 1)
@@ -211,6 +222,8 @@ public class LevelController : MonoBehaviour
             {
                 WinningText.text = $"{PlayerCards[i].PlayerName.text} is the WINNER!";
                 WinningScreen.SetActive(true);
+                gameOver = true;
+                PlayerCanClick = false;
                 Time.timeScale = 0;
             }
         }
@@ -220,5 +233,28 @@ public class LevelController : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("DemoScene_1");
+    }
+    public IEnumerator TurnOver(int PlayerID)
+    {
+        PlayerCanClick = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 5;
+        yield return new WaitForSeconds(10);
+        NextTurnText.text = $"{PlayerCards[PlayerID].PlayerName.text}'s turn.";
+        NextTurnScreen.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+
+        if (gameOver == false)
+        {
+            Time.timeScale = 0;
+        }
+
+    }
+    public void NextTurnStart()
+    {
+        NextTurnScreen.SetActive(false);
+        Time.timeScale = 1;
+        PlayerCanClick = true;
+        PlayerCards[CurrentPlayersTurn].CardAnimator.Play("PlayersTurnStart");
     }
 }
