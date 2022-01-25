@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
@@ -14,7 +15,9 @@ public class LevelController : MonoBehaviour
     public int PlayersClicks;
     public int PlayersStartingClicks;
     //public bool needsToSpawn = true;
-    public TMP_Text PlayerClicksUI;
+
+    public GameObject WinningScreen;
+    public TMP_Text WinningText;
     public List<PlayerCardInfo> PlayerCards;
     public int CurrentPlayersTurn;
 
@@ -34,7 +37,6 @@ public class LevelController : MonoBehaviour
     void Start()
     {
         PlayersClicks = PlayersStartingClicks;
-        PlayerClicksUI.text = PlayersClicks.ToString();
         spawnOffset.x = SpawnSpace.localScale.x * .5f;
         spawnOffset.y = SpawnSpace.localScale.y * .5f;
         PlayerCards[CurrentPlayersTurn].CardAnimator.Play("PlayersTurnStart");
@@ -158,39 +160,41 @@ public class LevelController : MonoBehaviour
                                 //Do I belong to a group?
                                 if (soulToCheck.GroupID < 0)
                                 {
-                                    //does the soul I am checking belong to a group?
-                                    if (thisSoul.GroupID >= 0)
-                                    {
-                                        soulToCheck.GroupID = thisSoul.GroupID;
-                                    }
-                                    //New soul group is needed
-                                    else if(soulToCheck.HasMadeGroup == false)
-                                    {
-                                        PlayersSoulGroups[i] += 1;
-                                        soulToCheck.GroupID = PlayersSoulGroups[i];
-                                        soulToCheck.HasMadeGroup = true;
-                                    }
-
-                                }
-                                //Do we belong to the same group?
-                                else if(soulToCheck.GroupID == thisSoul.GroupID)
-                                {
-                                    continue;
-                                }
-
-                                //Do we both belong to a group?
-                                else if (thisSoul.GroupID >= 0)
-                                {
                                     PlayersSoulGroups[i] = 0;
                                     RemakeSoulGroups(i);
-                                }
-                                //you can be a part of my group :D
-                                else
-                                {
-                                    thisSoul.GroupID = soulToCheck.GroupID;
+                                    ////does the soul I am checking belong to a group?
+                                    //if (thisSoul.GroupID >= 0)
+                                    //{
+                                    //    soulToCheck.GroupID = thisSoul.GroupID;
+                                    //}
+                                    ////New soul group is needed
+                                    //else if(soulToCheck.HasMadeGroup == false)
+                                    //{
+                                    //    PlayersSoulGroups[i] += 1;
+                                    //    soulToCheck.GroupID = PlayersSoulGroups[i];
+                                    //    soulToCheck.HasMadeGroup = true;
                                 }
 
                             }
+                                ////Do we belong to the same group?
+                                //else if(soulToCheck.GroupID == thisSoul.GroupID)
+                                //{
+                                //    continue;
+                                //}
+
+                                ////Do we both belong to a group?
+                                //else if (thisSoul.GroupID >= 0)
+                                //{
+                                //    PlayersSoulGroups[i] = 0;
+                                //    RemakeSoulGroups(i);
+                                //}
+                                ////you can be a part of my group :D
+                                //else
+                                //{
+                                //    thisSoul.GroupID = soulToCheck.GroupID;
+                                //}
+
+                            //}
                         }
 
                     }
@@ -203,7 +207,18 @@ public class LevelController : MonoBehaviour
         for (int i = 0; i < PlayerCards.Count; i++)
         {
             PlayerCards[i].PlayerScore.value = PlayersScores[i] - PlayersSoulGroups[i];
+            if (PlayerCards[i].PlayerScore.value == PlayerCards[i].PlayerScore.maxValue)
+            {
+                WinningText.text = $"{PlayerCards[i].PlayerName.text} is the WINNER!";
+                WinningScreen.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
         yield return null;
+    }
+    public void ReloadScene()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("DemoScene_1");
     }
 }
