@@ -15,20 +15,49 @@ public class LevelController : MonoBehaviour
     public int PlayersStartingClicks;
     //public bool needsToSpawn = true;
     public TMP_Text PlayerClicksUI;
+    public List<PlayerCardInfo> PlayerCards;
+    public int CurrentPlayersTurn;
+
+    private float scoreUpdateDelay;
+    public List<PlayerSoulsAndID> PlayersSouls;
+    public List<int> PlayersScores;
+    public List<int> PlayersSoulGroups;
 
     public static LevelController s;
     // Start is called before the first frame update
+
+    void Awake()
+    {
+        s = this;
+        PlayersSouls = new List<PlayerSoulsAndID> { };
+    }
     void Start()
     {
         PlayersClicks = PlayersStartingClicks;
+        PlayerClicksUI.text = PlayersClicks.ToString();
         spawnOffset.x = SpawnSpace.localScale.x * .5f;
         spawnOffset.y = SpawnSpace.localScale.y * .5f;
-        s = this;
+        PlayerCards[CurrentPlayersTurn].CardAnimator.Play("PlayersTurnStart");
+        PlayerCards[CurrentPlayersTurn].ClicksLeft.text = PlayersClicks.ToString();
+
+        //for (int i = 0; i < PlayerCards.Count - 1; i++)
+        //{
+            
+        //}
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        scoreUpdateDelay -= Time.deltaTime;
+        if (scoreUpdateDelay < 0)
+        {
+            scoreUpdateDelay = .4f;
+            StartCoroutine(ScoreUpdate());
+        }
+        
         if (DemonsInPlay < TargetNumberOfDemons)
         {
             Instantiate(Demons[Random.Range(0, Demons.Count)], SpawnSpace.position +
@@ -37,10 +66,21 @@ public class LevelController : MonoBehaviour
 
             DemonsInPlay += 1;
         }
+        //  Time for the next Players Turn
         if (PlayersClicks < 1)
         {
+            PlayerCards[CurrentPlayersTurn].CardAnimator.Play("PlayersTurnEnd");
+            if (CurrentPlayersTurn + 2 > PlayerCards.Count)
+            {
+                CurrentPlayersTurn = 0;
+            }
+            else
+            {
+                CurrentPlayersTurn += 1;
+            }
+            PlayerCards[CurrentPlayersTurn].CardAnimator.Play("PlayersTurnStart");
             PlayersClicks = PlayersStartingClicks;
-            PlayerClicksUI.text = PlayersClicks.ToString();
+            PlayerCards[CurrentPlayersTurn].ClicksLeft.text = PlayersClicks.ToString();
             //needsToSpawn = false;
         }
         //else if (needsToSpawn == false && PlayersClicks < 1)
@@ -53,5 +93,117 @@ public class LevelController : MonoBehaviour
     public void DemonDestroyed()
     {
         DemonsInPlay -= 1;
+    }
+    public void RemakeSoulGroups(int PlayerID)
+    {
+        for (int i = 0; i < PlayersSouls[PlayerID].souls.Count; i++)
+        {
+            PlayersSouls[PlayerID].souls[i].GetComponent<PlayersSouls>().MakeGroupID();
+        }
+
+    }
+    public IEnumerator ScoreUpdate()
+    {
+
+        for (int i = 0; i < PlayersScores.Count; i++)
+        {
+            PlayersScores[i] = 0;
+        }
+        for (int i = 0; i < PlayersSouls.Count; i++)
+        {
+            for (int j = 0; j < PlayersSouls[i].souls.Count; j++)
+            {
+                PlayersSoulGroups[i] = 0;
+                PlayersSouls[i].souls[j].GetComponent<PlayersSouls>().GroupID = -1;
+                PlayersSouls[i].souls[j].GetComponent<PlayersSouls>().IsConnected = false;
+                PlayersSouls[i].souls[j].GetComponent<PlayersSouls>().HasMadeGroup = false;
+                //if (PlayersSouls[i].souls[j].TryGetComponent<PlayersSouls>(out PlayersSouls playersSouls))
+                //{
+                //    playersSouls.GroupID = -1;
+                //}
+            }
+        }
+        //for each player
+        for (int i = 0; i < PlayersSouls.Count; i++)
+        {
+            //for each of that players souls
+            for (int j = 0; j < PlayersSouls[i].souls.Count; j++)
+            {
+                Collider2D[] thisSoulCheck = Physics2D.OverlapCircleAll(
+                    PlayersSouls[i].souls[j].transform.position, .6f);
+
+                PlayersSouls soulToCheck = PlayersSouls[i].souls[j].GetComponent<PlayersSouls>();
+
+                for (int k = 0; k < thisSoulCheck.Length; k++)
+                {
+                    if (thisSoulCheck[k].gameObject == PlayersSouls[i].souls[j].gameObject)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        PlayersSouls thisSoul = thisSoulCheck[k].GetComponent<PlayersSouls>();
+
+                        //is this a soul?
+                        if (thisSoul != null)
+                        {
+                            //do we belong to the same player?
+                            if (thisSoul.PlayerID == soulToCheck.PlayerID)
+                            {
+                                if(soulToCheck.IsConnected == false)
+                                {
+                                    PlayersScores[i] += 1;
+                                    soulToCheck.IsConnected = true;
+                                }
+                                //Do I belong to a group?
+                                if (soulToCheck.GroupID < 0)
+                                {
+                                    //does the soul I am checking belong to a group?
+                                    if (thisSoul.GroupID >= 0)
+                                    {
+                                        soulToCheck.GroupID = thisSoul.GroupID;
+                                    }
+                                    //New soul group is needed
+                                    else if(soulToCheck.HasMadeGroup == false)
+                                    {
+                                        PlayersSoulGroups[i] += 1;
+                                        soulToCheck.GroupID = PlayersSoulGroups[i];
+                                        soulToCheck.HasMadeGroup = true;
+                                    }
+
+                                }
+                                //Do we belong to the same group?
+                                else if(soulToCheck.GroupID == thisSoul.GroupID)
+                                {
+                                    continue;
+                                }
+
+                                //Do we both belong to a group?
+                                else if (thisSoul.GroupID >= 0)
+                                {
+                                    PlayersSoulGroups[i] = 0;
+                                    RemakeSoulGroups(i);
+                                }
+                                //you can be a part of my group :D
+                                else
+                                {
+                                    thisSoul.GroupID = soulToCheck.GroupID;
+                                }
+
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+        }
+
+        for (int i = 0; i < PlayerCards.Count; i++)
+        {
+            PlayerCards[i].PlayerScore.value = PlayersScores[i] - PlayersSoulGroups[i];
+        }
+        yield return null;
     }
 }

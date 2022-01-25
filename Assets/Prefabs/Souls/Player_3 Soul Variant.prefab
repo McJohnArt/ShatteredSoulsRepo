@@ -39,6 +39,10 @@ PrefabInstance:
       propertyPath: m_ColliderMask.m_Bits
       value: 4293917960
       objectReference: {fileID: 0}
+    - target: {fileID: 3567093724989478955, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: PlayerID
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795696, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_RootOrder
       value: 0

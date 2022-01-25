@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 320625116365942000}
   - component: {fileID: 7247303748812037976}
   - component: {fileID: 834677483729177553}
+  - component: {fileID: 4452675491884053042}
+  - component: {fileID: 6053506676926703248}
   m_Layer: 2
   m_Name: Art
   m_TagString: Untagged
@@ -4968,6 +4970,36 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &4452675491884053042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3524350781979832660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc68c9993678ee468cb91cc9e4b3a48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerID: 0
+  GroupID: 0
+--- !u!58 &6053506676926703248
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3524350781979832660}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.52
 --- !u!1 &5287196733760795700
 GameObject:
   m_ObjectHideFlags: 0
@@ -4982,6 +5014,7 @@ GameObject:
   - component: {fileID: 5287196733760795703}
   - component: {fileID: 3290725654024447812}
   - component: {fileID: -1791841631261752601}
+  - component: {fileID: 3567093724989478955}
   m_Layer: 0
   m_Name: Player_Base Soul
   m_TagString: Untagged
@@ -5129,3 +5162,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.6
+--- !u!114 &3567093724989478955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287196733760795700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc68c9993678ee468cb91cc9e4b3a48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerID: 0
+  GroupID: -1

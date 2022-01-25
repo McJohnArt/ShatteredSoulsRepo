@@ -20,7 +20,8 @@ public class DemonBase : MonoBehaviour
     private void OnMouseUp()
     {
         LevelController.s.PlayersClicks -= 1;
-        LevelController.s.PlayerClicksUI.text = LevelController.s.PlayersClicks.ToString();
+        LevelController.s.PlayerCards[LevelController.s.CurrentPlayersTurn].ClicksLeft.text
+            = LevelController.s.PlayersClicks.ToString();
         ChainDestroy();
     }
     public void ChainDestroy()
