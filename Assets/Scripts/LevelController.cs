@@ -220,9 +220,9 @@ public class LevelController : MonoBehaviour
             PlayerCards[i].PlayerScore.value = PlayersScores[i] - PlayersSoulGroups[i];
             if (PlayerCards[i].PlayerScore.value == PlayerCards[i].PlayerScore.maxValue)
             {
+                gameOver = true;
                 WinningText.text = $"{PlayerCards[i].PlayerName.text} is the WINNER!";
                 WinningScreen.SetActive(true);
-                gameOver = true;
                 PlayerCanClick = false;
                 Time.timeScale = 0;
             }
@@ -237,12 +237,10 @@ public class LevelController : MonoBehaviour
     public IEnumerator TurnOver(int PlayerID)
     {
         PlayerCanClick = false;
-        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 5;
         yield return new WaitForSeconds(10);
         NextTurnText.text = $"{PlayerCards[PlayerID].PlayerName.text}'s turn.";
         NextTurnScreen.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
 
         if (gameOver == false)
         {
