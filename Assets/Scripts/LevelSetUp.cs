@@ -14,6 +14,8 @@ public class LevelSetUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        NumberOfPlayers = PlayerPrefs.GetInt("NumberOfPlayers");
+
         for (int i = 0; i < SoulSpawnLocations.Count; i++)
         {
             GameObject thisSoul = Instantiate(PlayerSouls[WhichSoulToSpawn], 
@@ -36,6 +38,7 @@ public class LevelSetUp : MonoBehaviour
             
             GameObject playersCard = Instantiate(PlayerCards[i], PlayerCardHolder.transform);
             PlayerCardInfo playerCardInfo = playersCard.GetComponent<PlayerCardInfo>();
+            playerCardInfo.PlayerName.text = PlayerPrefs.GetString($"Player{i + 1}Name");
             LevelController.s.PlayerCards.Add(playerCardInfo);
             LevelController.s.PlayerCards[i].PlayerScore.maxValue = LevelController.s.PlayersSouls[i].souls.Count -1;
             LevelController.s.PlayersScores.Add(0);

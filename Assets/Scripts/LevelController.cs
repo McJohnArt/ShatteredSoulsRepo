@@ -234,6 +234,11 @@ public class LevelController : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("DemoScene_1");
     }
+    public void LoadSetupMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("SetupMenu");
+    }
     public IEnumerator TurnOver(int PlayerID)
     {
         PlayerCanClick = false;
