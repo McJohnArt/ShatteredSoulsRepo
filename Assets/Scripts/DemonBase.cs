@@ -125,7 +125,7 @@ public class DemonBase : MonoBehaviour
 
     public IEnumerator SetSelectionGlowForChain()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         if (triggeringExplosion == true)
         {
             triggeringChainExplosion = true;
