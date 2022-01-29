@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: PlayerID
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3567093724989478955, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: SoulsLight
+      value: 
+      objectReference: {fileID: 239585157317566305}
     - target: {fileID: 5287196733760795696, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -173,3 +177,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+--- !u!114 &239585157317566305 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7380458567925060104, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+  m_PrefabInstance: {fileID: 7295702309889625449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

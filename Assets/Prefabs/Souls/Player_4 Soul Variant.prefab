@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: PlayerID
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3567093724989478955, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: SoulsLight
+      value: 
+      objectReference: {fileID: 6848631482639880596}
     - target: {fileID: 5287196733760795696, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -99,6 +103,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5287196733760795697, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: m_Color.b
+      value: 0.2907778
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287196733760795697, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287196733760795697, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: m_Color.r
+      value: 0.27058828
+      objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795700, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Name
       value: Player_4 Soul Variant
@@ -115,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.6745098
       objectReference: {fileID: 0}
+    - target: {fileID: 7380458567925060104, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+      propertyPath: m_NormalMapQuality
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8513137485584756593, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Color.b
       value: 0.27058828
@@ -129,3 +149,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+--- !u!114 &6848631482639880596 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7380458567925060104, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
+  m_PrefabInstance: {fileID: 4136448482328691612}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
