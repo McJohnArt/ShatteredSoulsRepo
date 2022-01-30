@@ -168,14 +168,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7380458567925060104, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
-      propertyPath: m_Intensity
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7380458567925060104, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
-      propertyPath: m_PointLightInnerRadius
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7380458567925060104, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_PointLightOuterRadius
       value: 2
       objectReference: {fileID: 0}
