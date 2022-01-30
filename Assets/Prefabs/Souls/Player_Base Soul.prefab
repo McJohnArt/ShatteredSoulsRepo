@@ -49,7 +49,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 1
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -4780,7 +4780,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 6
   m_RenderMode: 1
   m_SortMode: 3
   m_MinParticleSize: 0
@@ -10073,8 +10073,6 @@ MonoBehaviour:
   MySprite: {fileID: 8513137485584756593}
   SoulsLight: {fileID: 0}
   MysfxPS:
-  - {fileID: 3124641661892725989}
-  - {fileID: 253615321017256582}
   - {fileID: 7247303748812037976}
 --- !u!1 &5831578763021922511
 GameObject:
@@ -10125,7 +10123,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 1
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -14856,7 +14854,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 6
   m_RenderMode: 1
   m_SortMode: 3
   m_MinParticleSize: 0
