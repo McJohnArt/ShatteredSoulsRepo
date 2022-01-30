@@ -44,6 +44,8 @@ public class SetupMenu : MonoBehaviour
         PlayerPrefs.SetString("Player2Name", Player2Name.text);
         PlayerPrefs.SetString("Player3Name", Player3Name.text);
         PlayerPrefs.SetString("Player4Name", Player4Name.text);
+        PlayerPrefs.SetInt("CurrentRound", 1);
+        PlayerPrefs.SetInt("NumberOfRoundsTotal", int.Parse(NumberOfRoundsInputField.text));
 
         SceneManager.LoadScene("DemoScene_1");
     }

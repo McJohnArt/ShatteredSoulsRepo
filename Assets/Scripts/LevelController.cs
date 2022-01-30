@@ -22,14 +22,17 @@ public class LevelController : MonoBehaviour
 
     public GameObject NextTurnScreen;
     public TMP_Text NextTurnText;
+    public TMP_Text RoundInfoText;
     public int CurrentPlayersTurn;
 
     private float scoreUpdateDelay;
-    private bool gameOver;
+    private bool roundOver;
     public bool PlayerCanClick;
     public List<PlayerSoulsAndID> PlayersSouls;
     public List<int> PlayersScores;
     public List<int> PlayersSoulGroups;
+    public int CurrentRound;
+    public int NumberOfRoundsTotal;
 
     public static LevelController s;
     // Start is called before the first frame update
@@ -38,6 +41,8 @@ public class LevelController : MonoBehaviour
     {
         s = this;
         PlayersSouls = new List<PlayerSoulsAndID> { };
+        CurrentRound = PlayerPrefs.GetInt("CurrentRound");
+        NumberOfRoundsTotal = PlayerPrefs.GetInt("NumberOfRoundsTotal");
     }
     void Start()
     {
@@ -96,7 +101,7 @@ public class LevelController : MonoBehaviour
             {
                 CurrentPlayersTurn += 1;
             }
-            if (gameOver == false)
+            if (roundOver == false)
             {
                 StartCoroutine(TurnOver(CurrentPlayersTurn));
 
@@ -234,8 +239,14 @@ public class LevelController : MonoBehaviour
             PlayerCards[i].PlayerScore.value = PlayersScores[i] - PlayersSoulGroups[i];
             if (PlayerCards[i].PlayerScore.value == PlayerCards[i].PlayerScore.maxValue)
             {
-                gameOver = true;
-                WinningText.text = $"{PlayerCards[i].PlayerName.text} is the WINNER!";
+                roundOver = true;
+                PlayerCards[i].IncrementPlayerWinCounter();
+                CurrentRound++;
+                if (CurrentRound < NumberOfRoundsTotal)
+                    WinningText.text = $"{PlayerCards[i].PlayerName.text} is the WINNER of round {CurrentRound}!";
+                else
+                    GrandWinnerReveal();
+
                 WinningScreen.SetActive(true);
                 PlayerCanClick = false;
                 Time.timeScale = 0;
@@ -243,7 +254,28 @@ public class LevelController : MonoBehaviour
         }
         yield return null;
     }
+    private void GrandWinnerReveal()
+    {
+        int WinningPlayerIndex = 0;
+        int TopWinningNumber = int.Parse(PlayerCards[WinningPlayerIndex].PlayerWinCounter.text);
+        for (int j = 0; j < PlayerCards.Count; j++)
+        {
+            int NextWinningNumber = int.Parse(PlayerCards[j].PlayerWinCounter.text);
+            if (NextWinningNumber >= TopWinningNumber)
+            {
+                WinningPlayerIndex = j;
+                TopWinningNumber = NextWinningNumber;
+            }
+        }
+        WinningText.text = $"{PlayerCards[WinningPlayerIndex].PlayerName.text} is the GRAND WINNER!";
+    }
+
     public void ReloadScene()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("DemoScene_1");
+    }
+    public void LoadNextRound()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("DemoScene_1");
@@ -258,10 +290,11 @@ public class LevelController : MonoBehaviour
         PlayerCanClick = false;
         Time.timeScale = 5;
         yield return new WaitForSeconds(10);
+        RoundInfoText.text = $"Round {CurrentRound} of {NumberOfRoundsTotal}";
         NextTurnText.text = $"{PlayerCards[PlayerID].PlayerName.text}'s turn.";
         NextTurnScreen.SetActive(true);
 
-        if (gameOver == false)
+        if (roundOver == false)
         {
             Time.timeScale = 0;
         }

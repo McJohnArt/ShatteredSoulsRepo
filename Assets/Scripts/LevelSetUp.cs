@@ -43,8 +43,6 @@ public class LevelSetUp : MonoBehaviour
             LevelController.s.PlayerCards[i].PlayerScore.maxValue = LevelController.s.PlayersSouls[i].souls.Count -1;
             LevelController.s.PlayersScores.Add(0);
             LevelController.s.PlayersSoulGroups.Add(0);
-
-
         }
     }
 
