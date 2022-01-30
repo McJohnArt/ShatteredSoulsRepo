@@ -48,11 +48,16 @@ public class LevelController : MonoBehaviour
         PlayerCards[CurrentPlayersTurn].CardAnimator.Play("PlayersTurnStart");
         PlayerCards[CurrentPlayersTurn].ClicksLeft.text = PlayersClicks.ToString();
 
+        for (int i = 0; i < PlayersSouls[CurrentPlayersTurn].souls.Count; i++)
+        {
+            PlayersSouls[CurrentPlayersTurn].souls[i].GetComponent<PlayersSouls>().TurnOnPS();
+        }
+
         //for (int i = 0; i < PlayerCards.Count - 1; i++)
         //{
-            
+
         //}
-        
+
     }
 
     // Update is called once per frame
@@ -78,6 +83,11 @@ public class LevelController : MonoBehaviour
         if (PlayersClicks < 1)
         {
             PlayerCards[CurrentPlayersTurn].CardAnimator.Play("PlayersTurnEnd");
+
+            for (int i = 0; i < PlayersSouls[CurrentPlayersTurn].souls.Count; i++)
+            {
+                PlayersSouls[CurrentPlayersTurn].souls[i].GetComponent<PlayersSouls>().TurnOffPS();
+            }
             if (CurrentPlayersTurn + 2 > PlayerCards.Count)
             {
                 CurrentPlayersTurn = 0;
@@ -90,7 +100,11 @@ public class LevelController : MonoBehaviour
             {
                 StartCoroutine(TurnOver(CurrentPlayersTurn));
 
-                
+                for (int i = 0; i < PlayersSouls[CurrentPlayersTurn].souls.Count; i++)
+                {
+                    PlayersSouls[CurrentPlayersTurn].souls[i].GetComponent<PlayersSouls>().TurnOnPS();
+                }
+
                 PlayersClicks = PlayersStartingClicks;
                 PlayerCards[CurrentPlayersTurn].ClicksLeft.text = PlayersClicks.ToString();
             }

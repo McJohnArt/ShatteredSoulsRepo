@@ -49,7 +49,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 1
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -4863,7 +4863,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a9f044429cd15bb4093803f81b057365, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4883,8 +4883,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: b7834bd760cda454ba3a3e70b2ca529a, type: 3}
   m_Color: {r: 1, g: 0.2688679, b: 0.2688679, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5020,7 +5020,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -9751,7 +9751,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -9793,6 +9793,9 @@ MonoBehaviour:
   GroupID: 0
   IsConnected: 0
   HasMadeGroup: 0
+  MySprite: {fileID: 0}
+  SoulsLight: {fileID: 0}
+  MysfxPS: []
 --- !u!58 &6053506676926703248
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10067,6 +10070,12 @@ MonoBehaviour:
   GroupID: -1
   IsConnected: 0
   HasMadeGroup: 0
+  MySprite: {fileID: 8513137485584756593}
+  SoulsLight: {fileID: 0}
+  MysfxPS:
+  - {fileID: 3124641661892725989}
+  - {fileID: 253615321017256582}
+  - {fileID: 7247303748812037976}
 --- !u!1 &5831578763021922511
 GameObject:
   m_ObjectHideFlags: 0
@@ -10116,7 +10125,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 1
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
