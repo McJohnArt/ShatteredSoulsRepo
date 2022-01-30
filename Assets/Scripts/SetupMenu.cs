@@ -14,6 +14,8 @@ public class SetupMenu : MonoBehaviour
     public TMP_InputField Player3Name;
     public TMP_InputField Player4Name;
     public int NumberOfPlayersShowing;
+    public InputField NumberOfRoundsInputField;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,5 +46,14 @@ public class SetupMenu : MonoBehaviour
         PlayerPrefs.SetString("Player4Name", Player4Name.text);
 
         SceneManager.LoadScene("DemoScene_1");
+    }
+
+    public void NumberOfRoundsOnChange()
+    {
+        int value = int.Parse(NumberOfRoundsInputField.text);
+        if (value < 1)
+            NumberOfRoundsInputField.text = "1";
+        else if (value > 7)
+            NumberOfRoundsInputField.text = "7";
     }
 }
