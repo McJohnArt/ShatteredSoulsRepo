@@ -27,6 +27,8 @@ public class LevelController : MonoBehaviour
     public TMP_Text RoundInfoText;
     public int CurrentPlayersTurn;
 
+    public GameObject PauseScreen;
+
     private float scoreUpdateDelay;
     private bool roundOver;
     public bool PlayerCanClick;
@@ -306,6 +308,21 @@ public class LevelController : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("DemoScene_1");
     }
+
+    public void PauseGame()
+    {
+        PlayerCanClick = false;
+        Time.timeScale = 0;
+        PauseScreen.SetActive(true);
+    }
+
+    public void ContinueGame()
+    {
+        PauseScreen.SetActive(false);
+        Time.timeScale = 1;
+        PlayerCanClick = true;
+    }
+
     public void LoadSetupMenu()
     {
         Time.timeScale = 1;
