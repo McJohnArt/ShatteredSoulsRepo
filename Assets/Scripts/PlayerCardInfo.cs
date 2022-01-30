@@ -15,11 +15,15 @@ public class PlayerCardInfo : MonoBehaviour
     public TMP_Text PlayerWinCounter;
     public Image PlayerWinImage;
 
+    void Awake()
+    {
+        PlayerWinImage.gameObject.SetActive(false);
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerWinImage.gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -28,12 +32,10 @@ public class PlayerCardInfo : MonoBehaviour
 
     }
 
-    public void IncrementPlayerWinCounter()
+    public void SetPlayerWinCounter(int value)
     {
-        int value = int.Parse(PlayerWinCounter.text);
-        if (value == 0)
+        if (value > 0)
             PlayerWinImage.gameObject.SetActive(true);
-        value++;
         PlayerWinCounter.text = value.ToString();
     }
 }

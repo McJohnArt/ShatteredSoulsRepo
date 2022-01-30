@@ -18,6 +18,8 @@ public class LevelController : MonoBehaviour
 
     public GameObject WinningScreen;
     public TMP_Text WinningText;
+    public GameObject RestartButton;
+    public GameObject NextRoundButton;
     public List<PlayerCardInfo> PlayerCards;
 
     public GameObject NextTurnScreen;
@@ -240,13 +242,13 @@ public class LevelController : MonoBehaviour
             if (PlayerCards[i].PlayerScore.value == PlayerCards[i].PlayerScore.maxValue)
             {
                 roundOver = true;
-                PlayerCards[i].IncrementPlayerWinCounter();
-                CurrentRound++;
+                SetRoundWinner(i);
                 if (CurrentRound < NumberOfRoundsTotal)
-                    WinningText.text = $"{PlayerCards[i].PlayerName.text} is the WINNER of round {CurrentRound}!";
+                    RoundWinnerReveal(i);
                 else
                     GrandWinnerReveal();
-
+                CurrentRound++;
+                PlayerPrefs.SetInt("CurrentRound", CurrentRound);
                 WinningScreen.SetActive(true);
                 PlayerCanClick = false;
                 Time.timeScale = 0;
@@ -254,6 +256,22 @@ public class LevelController : MonoBehaviour
         }
         yield return null;
     }
+
+    private void SetRoundWinner(int playerIndex)
+    {
+        int playerWinCounter = int.Parse(PlayerCards[playerIndex].PlayerWinCounter.text);
+        playerWinCounter++;
+        PlayerPrefs.SetInt($"Player{playerIndex + 1}WinnerCount", playerWinCounter);
+        PlayerCards[playerIndex].SetPlayerWinCounter(playerWinCounter);
+    }
+
+    private void RoundWinnerReveal(int palyerIndex)
+    {
+        WinningText.text = $"{PlayerCards[palyerIndex].PlayerName.text} is the WINNER of Round {CurrentRound}!";
+        RestartButton.SetActive(false);
+        NextRoundButton.SetActive(true);
+    }
+
     private void GrandWinnerReveal()
     {
         int WinningPlayerIndex = 0;
@@ -268,10 +286,18 @@ public class LevelController : MonoBehaviour
             }
         }
         WinningText.text = $"{PlayerCards[WinningPlayerIndex].PlayerName.text} is the GRAND WINNER!";
+        RestartButton.SetActive(true);
+        NextRoundButton.SetActive(false);
     }
 
-    public void ReloadScene()
+    public void RestartGame()
     {
+        PlayerPrefs.SetInt("CurrentRound", 1);
+        for (int i = 0; i < PlayerCards.Count; i++)
+        {
+            PlayerPrefs.SetInt($"Player{i + 1}WinnerCount", 0);
+            PlayerCards[i].SetPlayerWinCounter(0);
+        }
         Time.timeScale = 1;
         SceneManager.LoadScene("DemoScene_1");
     }

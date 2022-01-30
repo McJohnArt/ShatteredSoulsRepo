@@ -41,9 +41,13 @@ public class SetupMenu : MonoBehaviour
     {
         PlayerPrefs.SetInt("NumberOfPlayers", (int)NumberOfPlayersBar.value);
         PlayerPrefs.SetString("Player1Name", Player1Name.text);
+        PlayerPrefs.SetInt("Player1WinnerCount", 0);
         PlayerPrefs.SetString("Player2Name", Player2Name.text);
+        PlayerPrefs.SetInt("Player2WinnerCount", 0);
         PlayerPrefs.SetString("Player3Name", Player3Name.text);
+        PlayerPrefs.SetInt("Player3WinnerCount", 0);
         PlayerPrefs.SetString("Player4Name", Player4Name.text);
+        PlayerPrefs.SetInt("Player4WinnerCount", 0);
         PlayerPrefs.SetInt("CurrentRound", 1);
         PlayerPrefs.SetInt("NumberOfRoundsTotal", int.Parse(NumberOfRoundsInputField.text));
 

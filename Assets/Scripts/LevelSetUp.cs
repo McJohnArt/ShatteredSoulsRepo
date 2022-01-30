@@ -39,6 +39,7 @@ public class LevelSetUp : MonoBehaviour
             GameObject playersCard = Instantiate(PlayerCards[i], PlayerCardHolder.transform);
             PlayerCardInfo playerCardInfo = playersCard.GetComponent<PlayerCardInfo>();
             playerCardInfo.PlayerName.text = PlayerPrefs.GetString($"Player{i + 1}Name");
+            playerCardInfo.SetPlayerWinCounter(PlayerPrefs.GetInt($"Player{i + 1}WinnerCount"));
             LevelController.s.PlayerCards.Add(playerCardInfo);
             LevelController.s.PlayerCards[i].PlayerScore.maxValue = LevelController.s.PlayersSouls[i].souls.Count -1;
             LevelController.s.PlayersScores.Add(0);
