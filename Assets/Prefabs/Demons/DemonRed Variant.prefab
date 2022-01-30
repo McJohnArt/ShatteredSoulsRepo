@@ -8,17 +8,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5546943629373105922, guid: 6c1d1377e268f9c4d917a9afb164de83, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8e42cbd8e706329459a5364843faa1e1, type: 3}
+    - target: {fileID: 5546943629373105922, guid: 6c1d1377e268f9c4d917a9afb164de83, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5546943629373105922, guid: 6c1d1377e268f9c4d917a9afb164de83, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5546943629373105922, guid: 6c1d1377e268f9c4d917a9afb164de83, type: 3}
       propertyPath: m_Color.r
-      value: 0.764151
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5546943629373105922, guid: 6c1d1377e268f9c4d917a9afb164de83, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 77fcb72e7f3bc124eae4604adf320641, type: 2}
     - target: {fileID: 5691721523776111805, guid: 6c1d1377e268f9c4d917a9afb164de83, type: 3}
       propertyPath: m_RootOrder
       value: 0
