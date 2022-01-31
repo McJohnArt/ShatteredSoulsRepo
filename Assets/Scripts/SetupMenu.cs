@@ -13,6 +13,9 @@ public class SetupMenu : MonoBehaviour
     public TMP_InputField Player2Name;
     public TMP_InputField Player3Name;
     public TMP_InputField Player4Name;
+    public TMP_InputField Player5Name;
+    public TMP_InputField Player6Name;
+    public TMP_InputField Player7Name;
     public int NumberOfPlayersShowing;
     public Slider NumberOfRoundsSlider;
 
@@ -48,6 +51,12 @@ public class SetupMenu : MonoBehaviour
         PlayerPrefs.SetInt("Player3WinnerCount", 0);
         PlayerPrefs.SetString("Player4Name", Player4Name.text);
         PlayerPrefs.SetInt("Player4WinnerCount", 0);
+        PlayerPrefs.SetString("Player5Name", Player5Name.text);
+        PlayerPrefs.SetInt("Player5WinnerCount", 0);
+        PlayerPrefs.SetString("Player6Name", Player6Name.text);
+        PlayerPrefs.SetInt("Player6WinnerCount", 0);
+        PlayerPrefs.SetString("Player7Name", Player7Name.text);
+        PlayerPrefs.SetInt("Player7WinnerCount", 0);
         PlayerPrefs.SetInt("CurrentRound", 1);
         PlayerPrefs.SetInt("NumberOfRoundsTotal", (int)NumberOfRoundsSlider.value);
 

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7295702309889625449
+--- !u!1001 &4136448482328691612
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,64 +9,64 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 253615321017256582, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.b
-      value: 0.8352941
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 253615321017256582, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.g
-      value: 0.8784314
+      value: 0.27058828
       objectReference: {fileID: 0}
     - target: {fileID: 253615321017256582, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.r
-      value: 0
+      value: 0.3155195
       objectReference: {fileID: 0}
     - target: {fileID: 320625116365942000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0.8352941
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 320625116365942000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0.8784314
+      value: 0.27058828
       objectReference: {fileID: 0}
     - target: {fileID: 320625116365942000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.r
-      value: 0
+      value: 0.3155195
       objectReference: {fileID: 0}
     - target: {fileID: 320625116365942000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Parameters.colorGradient.key1.b
-      value: 0.8352941
+      value: 0.27450982
       objectReference: {fileID: 0}
     - target: {fileID: 320625116365942000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Parameters.colorGradient.key1.g
-      value: 0.8784314
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 320625116365942000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Parameters.colorGradient.key1.r
-      value: 0
+      value: 0.6784314
       objectReference: {fileID: 0}
     - target: {fileID: 3124641661892725989, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.b
-      value: 0.8352941
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3124641661892725989, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.g
-      value: 0.8784314
+      value: 0.27058828
       objectReference: {fileID: 0}
     - target: {fileID: 3124641661892725989, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.r
-      value: 0
+      value: 0.3155195
       objectReference: {fileID: 0}
     - target: {fileID: 3290725654024447812, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_ColliderMask.m_Bits
-      value: 4293386312
+      value: 4293387272
       objectReference: {fileID: 0}
     - target: {fileID: 3567093724989478955, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: PlayerID
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3567093724989478955, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: SoulsLight
       value: 
-      objectReference: {fileID: 239585157317566305}
+      objectReference: {fileID: 6848631482639880596}
     - target: {fileID: 5287196733760795696, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -113,86 +113,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795697, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Color.b
-      value: 0.8349057
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795697, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Color.g
-      value: 0.8773585
+      value: 0.27058828
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795697, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287196733760795699, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0.9647059
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287196733760795699, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287196733760795699, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.r
-      value: 0.27450982
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287196733760795699, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.b
-      value: 0.9647059
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287196733760795699, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287196733760795699, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.r
-      value: 0.27450982
+      value: 0.3155195
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795700, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Name
-      value: Player_1 Soul Variant
+      value: Player_5 Soul Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5287196733760795700, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7380458567925060104, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Color.b
-      value: 0.8352941
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7380458567925060104, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Color.g
-      value: 0.8784314
+      value: 0.27058828
       objectReference: {fileID: 0}
     - target: {fileID: 7380458567925060104, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.3155195
       objectReference: {fileID: 0}
     - target: {fileID: 7380458567925060104, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_NormalMapQuality
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 7380458567925060104, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8513137485584756593, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Color.b
-      value: 0.8352941
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8513137485584756593, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Color.g
-      value: 0.8784314
+      value: 0.27058828
       objectReference: {fileID: 0}
     - target: {fileID: 8513137485584756593, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.3155195
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
---- !u!114 &239585157317566305 stripped
+--- !u!114 &6848631482639880596 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7380458567925060104, guid: 653a3b085244bad4f95d4b73c9ac8d68, type: 3}
-  m_PrefabInstance: {fileID: 7295702309889625449}
+  m_PrefabInstance: {fileID: 4136448482328691612}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
